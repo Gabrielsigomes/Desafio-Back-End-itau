@@ -1,0 +1,28 @@
+package desafio.itau.springboot.service;
+
+import java.time.OffsetDateTime;
+import java.util.DoubleSummaryStatistics;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import desafio.itau.springboot.model.Transaction;
+import org.springframework.stereotype.Service;
+
+@Service
+public class TransactionService {
+
+    private final Queue<Transaction> transactions = new ConcurrentLinkedQueue<>();
+
+    public void addTransaction(Transaction transaction) {
+      transactions.add(transaction);
+    }
+
+    public void clearTransactions() {
+        transactions.clear();
+    }
+
+    // public DoubleSummaryStatistics getStatistics() {
+    //     OffsetDateTime now = OffsetDateTime.now();
+    // }
+    // Terminar de adicionar os métodos
+}
